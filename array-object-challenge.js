@@ -59,20 +59,14 @@ const quiz = [
 
 // Write your answer here
 
-function displayQuiz(quizData) {
-  for (const subject of quizData) {
-    console.log(`Subject:  ${subject.subject}`);
-    let questionNumber = 1;
-    for (const question of subject.quiz) {
-      console.log(`Question ${questionNumber}:  ${question.question}`);
-      console.log(`Answer:  ${question.answer}`);
-      questionNumber++;
-    }
-    console.log("-");
-  }
-}
-
-displayQuiz(quiz);
+quiz.forEach((subjectObj, index) => {
+    console.log(`Subject: ${subjectObj.subject}`);
+    subjectObj.quiz.forEach((questionObj, qIndex) => {
+        console.log(`Question ${qIndex + 1}:  ${questionObj.question}`);
+        console.log(`Answer:  ${questionObj.answer}`);
+        console.log("-----------------------");
+    });
+});
 
 
 
